@@ -1,0 +1,14 @@
+# Flutter / Dart
+.dart_tool/
+.packages
+pubspec.lock
+build/
+*.iml
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Coverage
+coverage/
