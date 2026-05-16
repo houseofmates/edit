@@ -6,7 +6,7 @@
 
 ---
 
-<h2>what it is</h2>
+<h2 align="center">what it is</h2>
 
 <p>
   <code>EditTerminal</code> is a lightweight, self-contained <code>TextField</code>-based text editor widget built for Flutter apps that want a <code>nano</code> or <code>vim</code>-like editing surface inside a terminal emulator.  it's how <code>edit filename.txt</code> opens files in Termisol.
@@ -14,7 +14,7 @@
 
 ---
 
-<h2>features</h2>
+<h2 align="center">features</h2>
 
 - **line numbers** — a persistent gutter shows the current line on every row
 - **status bar** — displays line &amp; column, detected language, character count, and encoding; a dirty <code>*</code> indicator shows unsaved changes
@@ -31,7 +31,7 @@
 
 ---
 
-<h2>installation</h2>
+<h2 align="center">installation</h2>
 
 add the local path or a pub source to your <code>pubspec.yaml</code>:
 
@@ -53,7 +53,7 @@ flutter pub get
 
 ---
 
-<h2>usage</h2>
+<h2 align="center">usage</h2>
 
 import the widget and pass a file path plus initial content:
 
@@ -77,7 +77,7 @@ the editor will auto-load the file from disk if <code>initialContent</code> is e
 
 ---
 
-<h2>api</h2>
+<h2 align="center">api</h2>
 
 ### <code>EditTerminal</code>
 
@@ -88,13 +88,13 @@ the editor will auto-load the file from disk if <code>initialContent</code> is e
 | <code>onClose</code> | <code>VoidCallback?</code> | no | <code>null</code> | fired when <kbd>Ctrl</kbd>+<kbd>W</kbd> or the back button is tapped |
 | <code>readOnly</code> | <code>bool</code> | no | <code>false</code> | disables editing and save |
 
-### callbacks / bindings
+<h3 align="center">callbacks / bindings</h3>
 
 the editor uses <code>CallbackShortcuts</code> internally — no state management required. wrap it in a <code>Focus</code> widget and call <code>unawaited</code> on the save/open futures if you don't need to await them.
 
 ---
 
-<h2>architecture</h2>
+<h2 align="center">architecture</h2>
 
 <p>
   the editor is intentionally simple: it wraps a standard Flutter <code>TextField</code> (unlimited lines) with a custom <code>TextEditingController</code> and a <code>ScrollController</code> pair for synchronized gutter / text scrolling.  no virtual pty, no language server protocol, no tree-shaking hackery.
