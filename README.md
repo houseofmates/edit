@@ -103,9 +103,3 @@ the editor uses <code>CallbackShortcuts</code> internally — no state managemen
 <p>
   state is local to the widget.  saving writes to a <code>dart:io</code> <code>File</code> directly; opening uses <code>file_picker</code> to let the user browse the filesystem.  all paths are absolute and come from the host app.
 </p>
-
----
-
-<h2>credits</h2>
-
-<p>extracted from <a href="https://github.com/houseofmates/termisol">houseofmates/termisol</a> by Hermes.  MIT licence.</p>
