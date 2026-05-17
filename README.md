@@ -1,7 +1,7 @@
 <h1 align="center">edit</h1>
 
 <p align="center">
-  a terminal-style text editor widget for flutter — extracted from <a href="https://github.com/houseofmates/termisol">Termisol</a>
+  a terminal-style text editor widget for flutter — extracted from <a href="https://github.com/houseofmates/termisol">termisol</a>
 </p>
 
 ---
