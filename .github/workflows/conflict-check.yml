@@ -1,0 +1,19 @@
+name: conflict check
+
+on: [push, pull_request]
+
+jobs:
+  conflict-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: check for merge conflict markers
+        run: |
+          # search for conflict markers in tracked files
+          conflict_files=$(git grep -l '^<<<<<<< \|^>>>>>> \|^======= $' -- ':!*.lock' -- ':!node_modules/' -- ':!build/' -- ':!.dart_tool/' -- ':!venv/' -- ':!.venv/' -- ':!dist/' -- ':!target/' 2>/dev/null || true)
+          if [ -n "$conflict_files" ]; then
+            echo "::error::Merge conflict markers found in files:"
+            echo "$conflict_files"
+            exit 1
+          fi
+          echo "No conflict markers found."

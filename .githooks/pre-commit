@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# prevents git merge conflict markers from being committed
+set -e
+
+conflict_files=$(git diff --cached --name-only --diff-filter=ACM | xargs grep -l '^<<<<<<< \|^>>>>>> \|^======= $' 2>/dev/null || true)
+
+if [ -n "$conflict_files" ]; then
+  echo "error: git merge conflict markers found in staged files:"
+  echo ""
+  echo "$conflict_files" | while read -r file; do
+    echo "  $file"
+  done
+  echo ""
+  echo "resolve all conflict markers before committing."
+  exit 1
+fi
+
+exit 0
