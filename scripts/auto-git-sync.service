@@ -1,0 +1,15 @@
+[Unit]
+Description=git auto-sync for edit
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/home/house/.hermes/scripts/git-pull-sync.sh /home/house/projects/edit
+Restart=always
+RestartSec=5
+Environment=PATH=/usr/local/bin:/usr/bin:/bin
+Environment=HOME=/home/house
+
+[Install]
+WantedBy=default.target
